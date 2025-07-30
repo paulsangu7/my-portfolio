@@ -56,6 +56,32 @@ body {
   background: #444;
 }
 
+/* Hamburger menu styles */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-toggle-label span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
 /* Main container */
 .page-container {
   flex: 1;
@@ -363,6 +389,49 @@ h1, h2, h3 {
   }
   .education-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav-toggle-label {
+    display: flex;
+  }
+  .navbar-right {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #222;
+    flex-direction: column;
+    width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 999;
+    padding: 16px 0;
+  }
+  .nav-toggle:checked ~ .navbar-right {
+    display: flex;
+  }
+  .navbar-right a {
+    color: #fff;
+    padding: 12px 24px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    margin: 0;
+  }
+  .navbar-right a:last-child {
+    border-bottom: none;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #222;
+  }
+  .page-container {
+    margin-top: 70px;
   }
 }
 
