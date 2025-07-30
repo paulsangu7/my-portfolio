@@ -464,4 +464,53 @@ section#home * {
   color: #fff;
 }
 
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive navbar */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-right {
+    flex-direction: column;
+    width: 100%;
+  }
+  .about-container, .education-grid, .projects-grid {
+    flex-direction: column;
+    width: 100%;
+  }
+  .about-image {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .edu-box, .project-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
