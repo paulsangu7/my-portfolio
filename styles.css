@@ -367,17 +367,38 @@ h1, h2, h3 {
 }
 
 @media (max-width: 600px) {
+  #home {
+    min-height: 70vh;
+    height: auto;
+    padding-top: 90px; /* space for navbar */
+    padding-bottom: 40px;
+  }
+  .home-content {
+    flex-direction: column;
+    gap: 16px;
+  }
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     padding: 12px 8px;
   }
   .navbar-right {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
     gap: 8px;
     width: 100%;
     margin-top: 8px;
     justify-content: flex-start;
+  }
+  .navbar-right a {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+    margin: 0;
   }
   .page-container {
     padding: 12px 4px 0 4px;
