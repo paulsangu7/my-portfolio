@@ -1,0 +1,467 @@
+/* Reset and base setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left h1 {
+  font-size: 18px;
+  color: #070707;
+}
+
+.navbar-right a {
+  position: relative;
+  margin-left: 15px;
+  text-decoration: none;
+  color: #3b1f8a;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+
+.navbar-right a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.navbar-right a:hover::after {
+  width: 100%;
+}
+
+/* Page layout */
+.page-container {
+  position: absolute;
+  top: 60px; /* below navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px); /* total minus navbar */
+  display: grid;
+  grid-template-rows: repeat(6, 1fr); /* 6 equal parts */
+}
+
+/* Each section */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
+/* Home styling*/
+section#home {
+  position: relative;
+  background-image: url("C:/myWebsite/pictures/Paulo_Kiwalile_passport_photo.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Hii ndiyo muhimu */
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+section#home::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* rangi ya giza yenye uwazi 50% */
+  z-index: 1;
+}
+  
+section#home * {
+  position: relative;
+  z-index: 2;  /* ili maandishi yaje juu ya overlay */
+}
+
+.navbar-left h1 {
+  color: rgb(20, 20, 20);
+  font-size: 36px;
+}
+
+#home h1 {
+  font-size: 48px;
+  text-align: center;
+  color: white;
+  font-weight:900;
+
+}
+
+
+/* Learn more button */
+
+.learn-more-btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* About page */
+.about-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1 1 60%;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.about-text h3 {
+  margin-top: 30px;
+  font-size: 24px;
+  color: #333;
+}
+
+.about-text ul {
+  padding-left: 20px;
+}
+
+.about-text ul li {
+  margin-bottom: 10px;
+}
+
+.about-image {
+  flex: 1 1 35%;
+  border: 2px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Education page */
+/* Formal Education section styles */
+.education-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.education-section h2 {
+  font-size: 36px;
+  color: #3b1f8a;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.edu-box {
+  background-color: #fff;
+  border: 2px solid transparent;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.edu-box:hover {
+  border-color: #3b1f8a;
+  transform: translateY(-10px);
+}
+
+.edu-icon {
+  font-size: 40px;
+  color: #3b1f8a;
+  margin-bottom: 15px;
+  transition: transform 0.5s ease;
+}
+
+.edu-box:hover .edu-icon {
+  transform: rotate(360deg);
+}
+
+.edu-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.edu-box p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.edu-heading {
+  font-size: 36px;
+  color: #3b1f8a;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.download-cv {
+  margin-top: 30px;
+  text-align: center; /* Ili button iwe kushoto kama sehemu ya education */
+}
+
+.download-cv a {
+  background-color: #3b1f8a;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.download-cv a:hover {
+  background-color: #571fc1;
+}
+
+
+
+/*interests section */
+.interests-section {
+  background-color: #f0f4f8;
+  height: 100vh;
+  padding: 60px 40px 40px 40px; /* juu, kulia, chini, kushoto */
+  color: #1a1a1a;
+  display: flex;
+  align-items: flex-start; /* Heading na content ziwe aligned left */
+  width: 100%;
+}
+
+
+
+.interests-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #3b1f8a;
+  text-align: left;
+}
+
+.interests-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* projects list */
+.projects-section {
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #222;
+  text-align: left;      /* Hii inafanya maandishi yote kushoto */
+  display: block;        /* Hakikisha si flex au grid hapa */
+}
+
+.projects-section h2 {
+  font-size: 36px;
+  color: #3b1f8a;
+  margin: 0 0 40px 0;    /* Hakikisha margin ya juu ni 0 na chini 40px */
+  text-align: left;
+  line-height: 1.2;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+.project-card p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Contact section */
+.contact-section {
+  padding: 60px 40px;
+  background-color: #f0f4f8;
+  margin: 40px auto;
+  color: #222;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  color: #3b1f8a;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-section p {
+  font-size: 18px;
+  margin: 0;
+  text-align: center;
+  max-width: 400px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.contact-details p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.contact-details a {
+  color: #3b1f8a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  margin-top: 20px;
+  font-size: 18px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #3b1f8a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+/* Footer styles */
+.site-footer {
+  background-color: #222; /* Dark background */
+  color: #fff; /* White text */
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-social-links {
+  margin-top: 10px;
+}
+
+.footer-social-links a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-social-links a:hover {
+  color: #fff;
+}
+
+
